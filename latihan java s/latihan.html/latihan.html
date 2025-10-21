@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Form Registrasi</h2>
+    <label for="nama depan">Nama Depan:</label>
+    <input type="text" id="nama depan" placeholder="namaDepan">
+
+    <label for="namaBelakang">Nama Belakang:</label>
+    <input type="text" id="namaBelakang" placeholder="namaBelakang">
+    <button onclick="tampilkanNama()">Kirim</button>
+  </div>
+
+  <script>
+    function tampilkanNama() {
+      const namaDepan = document.getElementById("namadepan").value.trim();
+      const namaBelakang = document.getElementById("namabelakang").value.trim();
+
+      if (namaDepan === "" || namaBelakang === "") {
+        console.log("Harap isi semua kolom!");
+        alert("Harap isi Nama Depan dan Nama Belakang!");
+        return;
+      }
+
+      const namaLengkap = `${namaDepan} ${namaBelakang}`;
+      console.log("Nama Lengkap :", namaLengkap);
+      alert(`Nama Lengkap: ${namaLengkap}`);
+    }
+  </script>
+
+</body>
+</html>
